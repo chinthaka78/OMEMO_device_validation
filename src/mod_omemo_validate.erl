@@ -170,9 +170,9 @@ validate_device_ids(To, DeviceIDs) ->
             %                []
             %        end
             %    end, Items),
-			DeviceIDs2 = [11111],
+			%DeviceIDs2 = [11111],
             ?INFO_MSG("Valid device IDs for ~p@~p: ~p", [User, Host, ValidIDs]),
-            InvalidIDs = [ID || ID <- DeviceIDs2, not lists:member(ID, ValidIDs)],
+            InvalidIDs = [ID || ID <- DeviceIDs, not lists:member(ID, ValidIDs)],
             case InvalidIDs of
                 [] ->
                     ?INFO_MSG("All device IDs valid for ~p@~p", [User, Host]),
